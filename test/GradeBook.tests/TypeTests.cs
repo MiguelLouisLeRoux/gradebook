@@ -5,6 +5,22 @@ namespace GradeBook.tests
 {
     public class TypseTests
     {
+
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string theName = "Pete";
+            toUpperCase(theName);
+            var name = toUpperCase(theName);
+            Assert.Equal("Pete", theName);
+            Assert.Equal("PETE", name);
+        }
+
+        private string toUpperCase(string val)
+        {
+            return val.ToUpper();
+        }
+
         [Fact]
         public void Test1()
         {
